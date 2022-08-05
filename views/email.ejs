@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Go Grow Glow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./email.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url('../Resources/rachit.png'); */
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #ff9595;
+}
+
+.span-container {
+  width: 100px;
+  height: 100px;
+  transform: translate(-50% -50%);
+  position: absolute;
+  top: 42%;
+  left: 45%;
+}
+
+span {
+  display: block;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  animation: speed 2s infinite ease-in-out;
+}
+
+.one {
+  background: #fde910;
+  animation-delay: 1.5s;
+}
+
+.two {
+  background: #16e4ff;
+  animation-delay: 1s;
+}
+
+.three {
+  background: #3df325;
+  animation-delay: 0.5s;
+}
+
+.four {
+  background: #e41010;
+}
+
+@keyframes speed {
+  0% {
+    transform: translate(0%);
+    border-radius: 50%;
+  }
+
+  25% {
+    transform: translate(150%) scale(0.5);
+    border-radius: 0%;
+  }
+
+  50% {
+    transform: translate(150%, 150%);
+    border-radius: 50%;
+  }
+
+  75% {
+    transform: translate(0, 150%) scale(0.5);
+    border-radius: 0%;
+  }
+}
+
+</style>
+<!-- <body> -->
+  <body>
+    <%if(limit!=3){%>
+      <div class="container">
+        <center><h1 style="color: black;">Ranjana, You are the best. Always so sweet and caring!❤😍 Very cunning and naughty also.😏</h1></center>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="span-container">
+          <span class="one"><center><h4>I</h4></center></span>
+          <span class="two"><center><h5>Love</h5></center></span>
+          <span class="three"><center><h4>You</h4></center></span>
+          <span class="four"><center>😘</center></span>
+        </div>
+        <form action="/sendmail" method="POST" autocomplete="off">
+          <center><button type="submit" name="send_mail" class="btn btn-primary">Click Me</button></center>
+        </form>
+        <center><h3 style="color: black;">I am very lucky to have you in my life so here is a small gesture to thank you.</h3></center>
+        <center><img src="/images/gift.jpg" alt="img unavailable" width="50%" height="60%"></center>
+        <center><h3 style="color: black;">Age chahe 21 ho gayi ho... but rahegi tu mere liye small baby hi hamesha 😬</h3></center>
+          <%}%>
+          <br/>
+          <%if(limit==3){%>
+            <div class="hide">
+              <center><h2 class="write">Sorry no more messages for Today</h2></center>
+              <form action="/verify" method="POST" autocomplete="off">
+                <center><label class="write" for="gcode">Enter verification Code</label></center>
+                <center><input type="text" name="gcode" id="gcode"></center>
+                  <center><button type="submit" name="send_gcode" class="btn btn-primary">Verify</button></center>
+              </form>
+                <br/>
+              <form action="/code" method="POST" autocomplete="off">
+                  <center><button type="submit" name="send_gcode" class="btn btn-primary">Generate Code</button></center>
+              </form>
+      
+            </div>
+          <%}%>           
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</body>
+</html>
+
